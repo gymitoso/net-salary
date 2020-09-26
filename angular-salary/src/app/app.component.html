@@ -1,0 +1,80 @@
+<div class="container d-flex justify-content-center">
+  <div class="card">
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <label for="grossSalary">Salário Bruto (R$)</label>
+          <input
+            type="number"
+            class="form-control"
+            name="grossSalary"
+            #grossSalary="ngModel"
+            [(ngModel)]="grossSalaryInput"
+            aria-describedby="grossSalary"
+            min="998"
+            (ngModelChange)="calculateNetSalary()"
+          />
+          <small class="mt-1 error" *ngIf="grossSalaryInput < 998"
+            >Apenas valores maiores que 998</small
+          >
+        </div>
+        <div class="form-group">
+          <label for="dependents">Número de dependentes</label>
+          <input
+            type="number"
+            class="form-control"
+            id="dependents"
+            name="dependents"
+            #dependents="ngModel"
+            [(ngModel)]="dependentsInput"
+            aria-describedby="dependents"
+            min="0"
+            (ngModelChange)="calculateNetSalary()"
+          />
+          <small class="mt-1 error" *ngIf="dependentsInput < 0"
+            >Apenas valores positivos</small
+          >
+        </div>
+        <div class="form-group">
+          <label for="deduction">Outros descontos (R$)</label>
+          <input
+            type="number"
+            class="form-control"
+            id="deduction"
+            name="deduction"
+            #deduction="ngModel"
+            [(ngModel)]="deductionInput"
+            aria-describedby="deduction"
+            min="0"
+            (ngModelChange)="calculateNetSalary()"
+          />
+          <small class="mt-1 error" *ngIf="deductionInput < 0"
+            >Apenas valores positivos</small
+          >
+        </div>
+      </form>
+      <div class="row">
+        <div class="col-md-6">
+          <span>Salário Bruto:</span>
+          <p id="grossSalaryLabel">R${{ grossSalaryInput }}</p>
+        </div>
+        <div class="col-md-6">
+          <span>INSS:</span>
+          <p id="inssLabel">R${{ inss }}</p>
+        </div>
+        <div class="col-md-6">
+          <span>IRRF:</span>
+          <p id="irrfLabel">R${{ irrf }}</p>
+        </div>
+        <div class="col-md-6">
+          <span>Descontos:</span>
+          <p id="deductionLabel">R${{ deductionInput }}</p>
+        </div>
+        <div class="col-12 text-center">
+          <span>Salário Líquido:</span>
+          <p id="netSalaryLabel" class="net-salary">R${{ netSalary }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

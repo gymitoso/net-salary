@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cálculo Salário Bruto 2019</title>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container d-flex justify-content-center">
+      <div class="card">
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="grossSalary">Salário Bruto (R$)</label>
+              <input
+                type="number"
+                class="form-control"
+                id="grossSalary"
+                aria-describedby="grossSalary"
+                min="998"
+              />
+              <small class="mt-1" id="grossSalaryError" style="display: none"
+                >Apenas valores maiores que 998</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="dependents">Número de dependentes</label>
+              <input
+                type="number"
+                class="form-control"
+                id="dependents"
+                aria-describedby="dependents"
+                min="0"
+              />
+            </div>
+            <div class="form-group">
+              <label for="deduction">Outros descontos (R$)</label>
+              <input
+                type="number"
+                class="form-control"
+                id="deduction"
+                aria-describedby="deduction"
+                min="0"
+              />
+            </div>
+          </form>
+          <div class="row">
+            <div class="col-md-6">
+              <span>Salário Bruto:</span>
+              <p id="grossSalaryLabel"></p>
+            </div>
+            <div class="col-md-6">
+              <span>INSS:</span>
+              <p id="inssLabel"></p>
+            </div>
+            <div class="col-md-6">
+              <span>IRRF:</span>
+              <p id="irrfLabel"></p>
+            </div>
+            <div class="col-md-6">
+              <span>Descontos:</span>
+              <p id="deductionLabel"></p>
+            </div>
+            <div class="col-12 text-center">
+              <span>Salário Líquido:</span>
+              <p id="netSalaryLabel" class="net-salary"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
