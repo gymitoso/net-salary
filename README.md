@@ -2,6 +2,8 @@
 
 Uma simples calculadora para realizar cálculo do salário liquido.
 
+![Calculadora](./app.png)
+
 Foram feitas 4 aplicações - Angular, React, Vue e Vanilla JS.
 
 Tabelas consideras:
