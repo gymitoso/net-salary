@@ -27,6 +27,7 @@ Para rodar a aplicação (em cada pasta):
 npm start
 ```
 
-A aplicação estará disponível em [http://localhost:4200](http://localhost:4200) (Angular) ou em [http://localhost:3000](http://localhost:3000) (React)
+A aplicação estará disponível em [http://localhost:4200](http://localhost:4200) (Angular), em [http://localhost:3000](http://localhost:3000) (React)
+ou em [http://localhost:8080](http://localhost:8080) (Vue)
 
 Para rodar o vanilla basta clicar no index.html
